@@ -1,4 +1,5 @@
 ![GensokyoBot](https://sixaiy.com/images/gb-banner.png)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a7b88677351d449985af8b5b964bfe23)](https://app.codacy.com/app/SixAiy/GensokyoBot?utm_source=github.com&utm_medium=referral&utm_content=SixAiy/GensokyoBot&utm_campaign=Badge_Grade_Dashboard)
 # GensokyoBot [![Github commits (since latest release)](https://img.shields.io/github/commits-since/SixAiy/GensokyoBot/latest.svg)]() [![Crowdin](https://d322cqt584bo4o.cloudfront.net/gensokyobot/localized.svg)](https://crowdin.com/project/gensokyobot) [![Open Source Helpers](https://www.codetriage.com/sixaiy/gensokyobot/badges/users.svg)](https://www.codetriage.com/sixaiy/gensokyobot) [![Twitter Follow](https://img.shields.io/twitter/follow/sixaiy.svg?style=social&label=Follow)]()
 
 Frederiham no longer maintains this bot from his github.
