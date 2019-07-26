@@ -12,6 +12,9 @@ Pull requests are welcome and please report any issues you find in [issues](http
 
 GensokyoBot is licensed under the MIT license, so feel free to copy small or large parts of the code here without having to ask.
 
+# Credits
+Credits to [Frederikham](https://github.com/Frederikam) for the creation of GensokyoBot
+
 # Support Servers
 
 [![Join SixAiy.com | SentBot](https://discordapp.com/api/guilds/269896638628102144/embed.png?style=banner2)](https://discord.gg/WK2tctJ)
@@ -67,8 +70,4 @@ systemctl daemon-reload
 systemctl enable gensokyobot
 systemctl start gensokyobot
 ```
-
-# Credits
-Credits to [Frederikham](https://github.com/Frederikam) for the creation of GensokyoBot
-
 
