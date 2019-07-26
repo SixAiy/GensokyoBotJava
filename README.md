@@ -15,7 +15,6 @@ GensokyoBot is licensed under the MIT license, so feel free to copy small or lar
 #Support Servers
 
 [![Join SixAiy.com | SentBot](https://discordapp.com/api/guilds/269896638628102144/embed.png?style=banner2)](https://discord.gg/WK2tctJ)
-
 [![Join FredBoat Hangout](https://discordapp.com/api/guilds/174820236481134592/embed.png?style=banner2)](https://discord.gg/cgPFW4q)
 
 # Commands
