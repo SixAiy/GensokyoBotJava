@@ -1,4 +1,0 @@
----
-development: true        # Set this to true for self hosting
-prefix: ',,'             # Default prefix used by the bot
-admins: []               # add comma separated userIds and roleIds that should have access to admin commands

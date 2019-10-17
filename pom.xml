@@ -32,7 +32,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>FredBoat</module>
-        <module>FredBoat-Bootloader</module>
+        <module>GensokyoBot</module>
+        <module>GensokyoBot-Bootloader</module>
     </modules>
 </project>
