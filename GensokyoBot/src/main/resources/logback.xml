@@ -28,9 +28,9 @@
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>INFO</level>
         </filter>
-        <file>logs/fredboat.log</file>
+        <file>logs/GensokyoBot.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>logs/fredboat.%d{yyyyMMdd}.log</fileNamePattern>
+            <fileNamePattern>logs/GensokyoBot.%d{yyyyMMdd}.log</fileNamePattern>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
         <encoder>

@@ -46,9 +46,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class FredBoat {
+public class GensokyoBot {
 
-    private static final Logger log = LoggerFactory.getLogger(FredBoat.class);
+    private static final Logger log = LoggerFactory.getLogger(GensokyoBot.class);
 
     public static final long START_TIME = System.currentTimeMillis();
     public static final int UNKNOWN_SHUTDOWN_CODE = -991023;

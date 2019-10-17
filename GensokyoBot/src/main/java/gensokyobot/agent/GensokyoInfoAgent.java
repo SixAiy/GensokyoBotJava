@@ -1,6 +1,6 @@
 package gensokyobot.agent;
 
-import gensokyobot.FredBoat;
+import gensokyobot.GensokyoBot;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import net.dv8tion.jda.core.entities.Game;
@@ -53,7 +53,7 @@ public class GensokyoInfoAgent extends Thread {
             String newSong = data.getJSONObject("SONGINFO").getString("TITLE");
 
             if (!newSong.equals(lastSong)) {
-                FredBoat.getShardManager().getShards().forEach(jda -> jda.getPresence().setGame(Game.listening(newSong)));
+                GensokyoBot.getShardManager().getShards().forEach(jda -> jda.getPresence().setGame(Game.listening(newSong)));
                 log.info("Now playing " + newSong);
             }
 

@@ -25,7 +25,7 @@
 
 package gensokyobot.command.admin;
 
-import gensokyobot.FredBoat;
+import gensokyobot.GensokyoBot;
 import gensokyobot.commandmeta.abs.Command;
 import gensokyobot.commandmeta.abs.ICommandAdminRestricted;
 import gensokyobot.util.TextUtils;
@@ -45,7 +45,7 @@ public class ReviveCommand extends Command implements ICommandAdminRestricted {
         int shardId = Integer.parseInt(args[1]);
 
         channel.sendMessage(TextUtils.prefaceWithName(invoker, " Reviving shard " + shardId)).queue();
-        FredBoat.getShardManager().restart(shardId);
+        GensokyoBot.getShardManager().restart(shardId);
     }
 
     @Override

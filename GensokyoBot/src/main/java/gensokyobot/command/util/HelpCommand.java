@@ -27,11 +27,12 @@ package gensokyobot.command.util;
 
 import gensokyobot.Config;
 import gensokyobot.commandmeta.abs.Command;
+import gensokyobot.util.BotConstants;
+import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.JDA;
-import net.dv8tion.jda.core.entities.Guild;
-import net.dv8tion.jda.core.entities.Member;
-import net.dv8tion.jda.core.entities.Message;
-import net.dv8tion.jda.core.entities.TextChannel;
+import net.dv8tion.jda.core.entities.*;
+
+import java.awt.*;
 
 public class HelpCommand extends Command  {
 
@@ -40,37 +41,28 @@ public class HelpCommand extends Command  {
         channel.sendMessage(getHelpMessage(guild.getJDA())).queue();
     }
 
-    public static String getHelpMessage(JDA jda) {
-        String out =  "```md\n" +
-                "< Music Commands >\n" +
-                ",,join\n" +
-                "#Joins your voice chat and begin playing.\n" +
-                ",,leave\n" +
-                "#Leaves the voice chat, stopping the music\n" +
-                ",,np\n" +
-                "#Shows the song currently playing in a nice embed\n" +
-                ",,stats\n" +
-                "#Displays stats about this bot\n" +
-                ",,shards\n" +
-                "#Displays shards information about this bot\n" +
-                ",,invite\n" +
-                "#Displays invite link for this bot\n" +
-                ",,help\n" +
-                "#Displays this help message\n" +
-                "\n\n" +
-                "Invite this bot: https://discordapp.com/oauth2/authorize?&client_id=" + jda.getSelfUser().getId() + "&scope=bot\n" +
-                "Source code: https://github.com/Frederikam/GensokyoBot\n\n{0}" +
-                "```";
-
-        out = out.replaceAll(",,", Config.CONFIG.getPrefix());
-
+    public static MessageEmbed getHelpMessage(JDA jda) {
+        EmbedBuilder eb = new EmbedBuilder();
+        eb.setColor(new Color(23, 191, 224));
+        eb.setAuthor(jda.getSelfUser().getName(), null, jda.getSelfUser().getAvatarUrl());
+        eb.setDescription("Invite this bot: https://sixaiy.com/invite/gensokyobot\n\n" +
+                "Documentation can be found at\n" + BotConstants.GITHUB_URL +
+                "\n\nNeed help or have any ideas for GensokyoBot? Perhaps you just want to hang out? Join the FredBoat community!\n" +
+                BotConstants.hangoutInvite
+        );
+        eb.addField(Config.CONFIG.getPrefix() + "join", "#Joins your voice chat and begin playing.", true);
+        eb.addField(Config.CONFIG.getPrefix() + "leave", "#Joins your voice chat and begin playing.", true);
+        eb.addField(Config.CONFIG.getPrefix() + "np", "#Joins your voice chat and begin playing.", true);
+        eb.addField(Config.CONFIG.getPrefix() + "stats", "Displays stats about this bo", true);
+        eb.addField(Config.CONFIG.getPrefix() + "shards", "Displays shards information about this bot", true);
+        eb.addField(Config.CONFIG.getPrefix() + "invite", "Displays invite link for this bot", true);
+        eb.addField(Config.CONFIG.getPrefix() + "help", "Displays this help message", true);
         if(Config.CONFIG.getStreamUrl().equals(Config.GENSOKYO_RADIO_STREAM_URL)) {
-            out = out.replaceFirst("\\{0}", "Content provided by gensokyoradio.net.\nThe GR logo is a trademark of Gensokyo Radio.\nGensokyo Radio is © LunarSpotlight.\n");
+            eb.setFooter("Content provided by gensokyoradio.net.The GR logo is a trademark of Gensokyo Radio. Gensokyo Radio is © LunarSpotlight.", null);
         } else {
-            out = out.replaceFirst("\\{0}", "");
+            eb.setFooter("" + Config.CONFIG.getDistribution(), jda.getSelfUser().getAvatarUrl());
         }
-
-        return out;
+        return eb.build();
     }
 
     @Override

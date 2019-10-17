@@ -87,7 +87,7 @@ public class Bootloader {
             System.exit(-1);
         }
         
-        //ProcessBuilder pb = new ProcessBuilder(System.getProperty("java.home") + "/bin/java -jar "+new File("FredBoat-1.0.jar").getAbsolutePath())
+        //ProcessBuilder pb = new ProcessBuilder(System.getProperty("java.home") + "/bin/java -jar "+new File("GensokyoBot.jar").getAbsolutePath())
         ProcessBuilder pb = new ProcessBuilder()
                 .inheritIO();
         ArrayList<String> list = new ArrayList<>();

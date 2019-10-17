@@ -26,7 +26,7 @@
 package gensokyobot.command.admin;
 
 import gensokyobot.commandmeta.abs.ICommandOwnerRestricted;
-import gensokyobot.FredBoat;
+import gensokyobot.GensokyoBot;
 import gensokyobot.commandmeta.abs.Command;
 import gensokyobot.util.ExitCodes;
 import gensokyobot.util.TextUtils;
@@ -49,7 +49,7 @@ public class BotRestartCommand extends Command implements ICommandOwnerRestricte
             log.warn("Rate limited", e);
         }
 
-        FredBoat.shutdown(ExitCodes.EXIT_CODE_RESTART);
+        GensokyoBot.shutdown(ExitCodes.EXIT_CODE_RESTART);
     }
 
     @Override

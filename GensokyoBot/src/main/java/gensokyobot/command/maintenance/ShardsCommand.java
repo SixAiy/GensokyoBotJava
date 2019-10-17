@@ -25,7 +25,7 @@
 
 package gensokyobot.command.maintenance;
 
-import gensokyobot.FredBoat;
+import gensokyobot.GensokyoBot;
 import gensokyobot.commandmeta.abs.Command;
 import gensokyobot.commandmeta.abs.IMaintenanceCommand;
 import net.dv8tion.jda.core.JDA;
@@ -49,7 +49,7 @@ public class ShardsCommand extends Command implements IMaintenanceCommand {
         List<MessageBuilder> builders = new ArrayList<>();
 
         int i = 0;
-        for(JDA shard : FredBoat.getShardManager().getShards()) {
+        for(JDA shard : GensokyoBot.getShardManager().getShards()) {
             if(i % SHARDS_PER_MESSAGE == 0) {
                 mb = new MessageBuilder()
                         .append("```diff\n");

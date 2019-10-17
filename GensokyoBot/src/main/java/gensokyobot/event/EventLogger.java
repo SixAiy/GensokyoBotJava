@@ -25,7 +25,7 @@
 
 package gensokyobot.event;
 
-import gensokyobot.FredBoat;
+import gensokyobot.GensokyoBot;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.MessageBuilder;
 import net.dv8tion.jda.core.entities.Message;
@@ -54,7 +54,7 @@ public class EventLogger extends ListenerAdapter {
 
     private void send(String msg) {
         /*DiscordUtil.sendShardlessMessage(jda, logChannelId,
-                FredBoat.getInstance(jda).getShardInfo().getShardString()
+                GensokyoBot.getInstance(jda).getShardInfo().getShardString()
                 + " "
                 + msg
         );*/
@@ -86,8 +86,8 @@ public class EventLogger extends ListenerAdapter {
 
     private final Runnable ON_SHUTDOWN = () -> {
         Runtime rt = Runtime.getRuntime();
-        if(FredBoat.shutdownCode != FredBoat.UNKNOWN_SHUTDOWN_CODE){
-            send("[:door:] Exiting with code " + FredBoat.shutdownCode + ".");
+        if(GensokyoBot.shutdownCode != GensokyoBot.UNKNOWN_SHUTDOWN_CODE){
+            send("[:door:] Exiting with code " + GensokyoBot.shutdownCode + ".");
         } else {
             send("[:door:] Exiting with unknown code.");
         }

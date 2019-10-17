@@ -26,7 +26,7 @@
 package gensokyobot.command.maintenance;
 
 import gensokyobot.Config;
-import gensokyobot.FredBoat;
+import gensokyobot.GensokyoBot;
 import gensokyobot.audio.PlayerRegistry;
 import gensokyobot.commandmeta.CommandManager;
 import gensokyobot.commandmeta.abs.Command;
@@ -45,7 +45,7 @@ public class StatsCommand extends Command implements IMaintenanceCommand {
 
     @Override
     public void onInvoke(Guild guild, TextChannel channel, Member invoker, Message message, String[] args) {
-        long totalSecs = (System.currentTimeMillis() - FredBoat.START_TIME) / 1000;
+        long totalSecs = (System.currentTimeMillis() - GensokyoBot.START_TIME) / 1000;
         int days = (int) (totalSecs / (60 * 60 * 24));
         int hours = (int) ((totalSecs / (60 * 60)) % 24);
         int mins = (int) ((totalSecs / 60) % 60);
@@ -70,8 +70,8 @@ public class StatsCommand extends Command implements IMaintenanceCommand {
         str = str + "Sharding:                       " + guild.getJDA().getShardInfo().getShardString() + "\n";
         str = str + "Players playing:                " + PlayerRegistry.getPlayingPlayers().size() + "\n";
 
-        str = str + "Known servers:                  " + FredBoat.getShardManager().getGuilds().size() + "\n";
-        str = str + "Known users in servers:         " + FredBoat.getShardManager().getUsers().size() + "\n";
+        str = str + "Known servers:                  " + GensokyoBot.getShardManager().getGuilds().size() + "\n";
+        str = str + "Known users in servers:         " + GensokyoBot.getShardManager().getUsers().size() + "\n";
         str = str + "Distribution:                   " + Config.CONFIG.getDistribution() + "\n";
         str = str + "JDA responses total:            " + guild.getJDA().getResponseTotal() + "\n";
         str = str + "JDA version:                    " + JDAInfo.VERSION;

@@ -25,7 +25,7 @@
 
 package gensokyobot.command.admin;
 
-import gensokyobot.FredBoat;
+import gensokyobot.GensokyoBot;
 import gensokyobot.commandmeta.abs.Command;
 import gensokyobot.commandmeta.abs.ICommandOwnerRestricted;
 import gensokyobot.util.ExitCodes;
@@ -44,7 +44,7 @@ public class ExitCommand extends Command implements ICommandOwnerRestricted {
     @Override
     public void onInvoke(Guild guild, TextChannel channel, Member invoker, Message message, String[] args) {
         channel.sendMessage(TextUtils.prefaceWithName(invoker, " :wave:")).queue();
-        FredBoat.shutdown(ExitCodes.EXIT_CODE_NORMAL);
+        GensokyoBot.shutdown(ExitCodes.EXIT_CODE_NORMAL);
     }
 
     @Override

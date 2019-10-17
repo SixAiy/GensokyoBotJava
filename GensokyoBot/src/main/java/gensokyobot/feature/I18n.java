@@ -37,8 +37,8 @@ public class I18n {
 
     private static final Logger log = LoggerFactory.getLogger(I18n.class);
 
-    public static FredBoatLocale DEFAULT = new FredBoatLocale(new Locale("en","US"), "en_US", "English");
-    public static final HashMap<String, FredBoatLocale> LANGS = new HashMap<>();
+    public static GensokyoBotLocale DEFAULT = new GensokyoBotLocale(new Locale("en","US"), "en_US", "English");
+    public static final HashMap<String, GensokyoBotLocale> LANGS = new HashMap<>();
 
     public static void start() {
         LANGS.put("en_US", DEFAULT);
@@ -50,12 +50,12 @@ public class I18n {
         return DEFAULT.getProps();
     }
 
-    public static class FredBoatLocale {
+    public static class GensokyoBotLocale {
 
         private final ResourceBundle props;
         private final String nativeName;
 
-        FredBoatLocale(Locale locale, String code, String nativeName) throws MissingResourceException {
+        GensokyoBotLocale(Locale locale, String code, String nativeName) throws MissingResourceException {
             props = ResourceBundle.getBundle("lang." + code, locale);
             this.nativeName = nativeName;
         }

@@ -25,7 +25,7 @@
 
 package gensokyobot.event;
 
-import gensokyobot.FredBoat;
+import gensokyobot.GensokyoBot;
 import net.dv8tion.jda.core.events.ReadyEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
@@ -39,6 +39,6 @@ public abstract class AbstractEventListener extends ListenerAdapter {
 
     @Override
     public void onReady(ReadyEvent event) {
-        FredBoat.onInit(event);
+        GensokyoBot.onInit(event);
     }
 }

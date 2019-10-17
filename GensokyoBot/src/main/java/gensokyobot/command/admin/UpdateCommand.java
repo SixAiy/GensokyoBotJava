@@ -25,7 +25,7 @@
 
 package gensokyobot.command.admin;
 
-import gensokyobot.FredBoat;
+import gensokyobot.GensokyoBot;
 import gensokyobot.commandmeta.abs.Command;
 import gensokyobot.commandmeta.abs.ICommandOwnerRestricted;
 import gensokyobot.util.ExitCodes;
@@ -49,7 +49,7 @@ public class UpdateCommand extends Command implements ICommandOwnerRestricted {
     @Override
     public void onInvoke(Guild guild, TextChannel channel, Member invoker, Message message, String[] args) {
         try {
-            File homeJar = new File(System.getProperty("user.home") + "/FredBoat-1.0.jar");
+            File homeJar = new File(System.getProperty("user.home") + "/GensokyoBot.jar");
 
             //Must exist and not be too old
             if(homeJar.exists()
@@ -69,8 +69,8 @@ public class UpdateCommand extends Command implements ICommandOwnerRestricted {
     }
 
     private void update(TextChannel channel) throws IOException {
-        File homeJar = new File(System.getProperty("user.home") + "/FredBoat-1.0.jar");
-        File targetJar = new File("./update/target/FredBoat-1.0.jar");
+        File homeJar = new File(System.getProperty("user.home") + "/GensokyoBot.jar");
+        File targetJar = new File("./update/target/GensokyoBot.jar");
 
         targetJar.getParentFile().mkdirs();
         targetJar.delete();
@@ -78,7 +78,7 @@ public class UpdateCommand extends Command implements ICommandOwnerRestricted {
 
         //Shutdown for update
         channel.sendMessage("Now restarting...").queue();
-        FredBoat.shutdown(ExitCodes.EXIT_CODE_UPDATE);
+        GensokyoBot.shutdown(ExitCodes.EXIT_CODE_UPDATE);
     }
 
     @Override

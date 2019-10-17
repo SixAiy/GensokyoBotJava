@@ -26,15 +26,15 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>fredboat</groupId>
-    <artifactId>FredBoat</artifactId>
+    <groupId>gensoykobot</groupId>
+    <artifactId>GensokyoBot</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <start-class>gensokyobot.FredBoat</start-class>
+        <start-class>gensokyobot.GensokyoBot</start-class>
     </properties>
     <dependencies>
         <dependency>
@@ -205,7 +205,7 @@
                                     implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
                                 <transformer
                                     implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>gensokyobot.FredBoat</mainClass>
+                                    <mainClass>gensokyobot.GensokyoBot</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

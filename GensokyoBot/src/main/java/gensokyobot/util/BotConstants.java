@@ -25,9 +25,25 @@
 
 package gensokyobot.util;
 
+import java.awt.*;
+
 public class BotConstants {
+    public static final long OWNER_FRED = 81011298891993088L;
+    public static final long OWNER_SIXAIY = 188571987835092992L;
 
-    public static final String MUSIC_BOT_ID = "184405311681986560";
+    public static final long GENSOKYO_BOT_ID = 302857939910131712L;
 
-    public static final String FREDBOAT_HANGOUT_ID = "174820236481134592";
+    public static final long FREDBOAT_HANGOUT_ID = 174820236481134592L;
+    public static final long FBH_MODERATOR_ROLE_ID = 242377373947920384L;
+    public static final Color FREDBOAT_COLOR = new Color(28, 191, 226); //#1CBFE2
+
+    public static final String FREDBOAT_URL = "https://fredboat.com";
+    public static final String DOCS_URL = "https://docs.sixaiy.com/gensokyobot";
+    public static final String DOCS_PERMISSIONS_URL = DOCS_URL + "/permissions";
+    public static final String PATREON_CAMPAIGN_URL = "https://www.patreon.com/fredboat";
+    public static final String GITHUB_URL = "https://github.com/SixAiy/GensokyoBot";
+
+    //These can be set using eval in case we need to change it in the future ~Fre_d
+    public static String hangoutInvite = "https://discord.gg/cgPFW4q";
+    public static String botInvite = "https://goo.gl/cFs5M9";
 }

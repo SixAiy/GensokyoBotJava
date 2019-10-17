@@ -70,7 +70,7 @@ public class CompileCommand extends Command implements ICommandOwnerRestricted {
                 throw new RuntimeException(ex);
             }
 
-            Process gitClone = rt.exec("git clone https://github.com/" + githubUser + "/FredBoat.git --branch " + branch + " --recursive --single-branch update");
+            Process gitClone = rt.exec("git clone https://github.com/" + githubUser + "/GensokyoBot.git --branch " + branch + " --recursive --single-branch update");
             new SLF4JInputStreamLogger(log, gitClone.getInputStream()).start();
             new SLF4JInputStreamErrorLogger(log, gitClone.getInputStream()).start();
 
@@ -83,7 +83,7 @@ public class CompileCommand extends Command implements ICommandOwnerRestricted {
             }
 
             msg = msg.editMessage(msg.getContentRaw() + "👌🏽\n\nRunning `mvn package shade:shade`... ").complete(true);
-            File updateDir = new File("update/FredBoat");
+            File updateDir = new File("update/GensokyoBot");
 
             Process mvnBuild = rt.exec("mvn -f " + updateDir.getAbsolutePath() + "/pom.xml package shade:shade");
             new SLF4JInputStreamLogger(log, mvnBuild.getInputStream()).start();
@@ -99,7 +99,7 @@ public class CompileCommand extends Command implements ICommandOwnerRestricted {
 
             msg.editMessage(msg.getContentRaw() + "👌🏽").queue();
 
-            if(!new File("./update/FredBoat/target/FredBoat-1.0.jar").renameTo(new File(System.getProperty("user.home") + "/FredBoat-1.0.jar"))){
+            if(!new File("./update/GensokyoBot/target/GensokyoBot.jar").renameTo(new File(System.getProperty("user.home") + "/GensokyoBot.jar"))){
                 throw new RuntimeException("Failed to move jar to home");
             }
         } catch (InterruptedException | IOException | RateLimitedException ex) {
