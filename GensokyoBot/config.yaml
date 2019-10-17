@@ -1,5 +1,5 @@
 ---
 development: true        # Set this to true for self hosting
-prefix: '>>'             # Default prefix used by the bot
+prefix: ',,'             # Default prefix used by the bot
 admins: []               # add comma separated userIds and roleIds that should have access to admin commands
-token: NjE4MDEyMjM5NzU2MTMyMzUy.Xag8cg.ybpEORy8rH99pS8JD-Nmjeo3Wgc                 # add your discord bot token below and remove the # (but keep two spaces in front of it) find the token of your bot on https://discordapp.com/developers/applications/me
+token:                 # add your discord bot token below and remove the # (but keep two spaces in front of it) find the token of your bot on https://discordapp.com/developers/applications/me
