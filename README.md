@@ -45,7 +45,7 @@ Gensokyo Radio is © LunarSpotlight.
 ```
 
 # Selfhosting
-1. Java 10 __JDK__: [Oracle](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or [OpenJDK](http://jdk.java.net/13/)
+1. Java 13 __JDK__: [Oracle](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or [OpenJDK](http://jdk.java.net/13/)
 2. [Git](https://www.atlassian.com/git/tutorials/install-git)
 3. [JDK added to your PATH](https://www.tutorialspoint.com/maven/maven_environment_setup.htm)
 
