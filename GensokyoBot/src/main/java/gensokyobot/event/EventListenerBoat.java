@@ -30,12 +30,11 @@ import gensokyobot.command.util.HelpCommand;
 import gensokyobot.commandmeta.CommandManager;
 import gensokyobot.commandmeta.CommandRegistry;
 import gensokyobot.commandmeta.abs.Command;
-import net.dv8tion.jda.core.entities.Message;
-import net.dv8tion.jda.core.entities.User;
-import net.dv8tion.jda.core.events.guild.GuildLeaveEvent;
-import net.dv8tion.jda.core.events.message.MessageDeleteEvent;
-import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.core.events.message.priv.PrivateMessageReceivedEvent;
+import net.dv8tion.jda.api.entities.*;
+import net.dv8tion.jda.api.events.guild.GuildLeaveEvent;
+import net.dv8tion.jda.api.events.message.MessageDeleteEvent;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.message.priv.PrivateMessageReceivedEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -51,7 +50,6 @@ public class EventListenerBoat extends AbstractEventListener {
 
     public EventListenerBoat() { }
 
-    @Override
     public void onMessageReceived(MessageReceivedEvent event) {
         if (event.getPrivateChannel() != null) {
             log.info("PRIVATE" + " \t " + event.getAuthor().getName() + " \t " + event.getMessage().getContentRaw());

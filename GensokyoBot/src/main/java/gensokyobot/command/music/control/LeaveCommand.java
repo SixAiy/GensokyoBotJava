@@ -30,10 +30,10 @@ import gensokyobot.audio.PlayerRegistry;
 import gensokyobot.commandmeta.abs.Command;
 import gensokyobot.feature.I18n;
 import gensokyobot.commandmeta.abs.IMusicCommand;
-import net.dv8tion.jda.core.entities.Guild;
-import net.dv8tion.jda.core.entities.Member;
-import net.dv8tion.jda.core.entities.Message;
-import net.dv8tion.jda.core.entities.TextChannel;
+import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.Member;
+import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.entities.TextChannel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

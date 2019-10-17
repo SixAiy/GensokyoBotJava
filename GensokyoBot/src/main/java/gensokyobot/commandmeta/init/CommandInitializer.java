@@ -25,11 +25,9 @@
 package gensokyobot.commandmeta.init;
 
 import gensokyobot.command.admin.BotRestartCommand;
-import gensokyobot.command.admin.CompileCommand;
 import gensokyobot.command.admin.EvalCommand;
 import gensokyobot.command.admin.ExitCommand;
 import gensokyobot.command.admin.ReviveCommand;
-import gensokyobot.command.admin.UpdateCommand;
 import gensokyobot.command.maintenance.ShardsCommand;
 import gensokyobot.command.maintenance.StatsCommand;
 import gensokyobot.command.maintenance.VersionCommand;
@@ -61,11 +59,9 @@ public class CommandInitializer {
 
         //Admin commands
         CommandRegistry.registerCommand("restart", new BotRestartCommand());
-        CommandRegistry.registerCommand("compile", new CompileCommand());
         CommandRegistry.registerCommand("eval", new EvalCommand());
         CommandRegistry.registerCommand("exit", new ExitCommand());
         CommandRegistry.registerCommand("revive", new ReviveCommand());
-        CommandRegistry.registerCommand("update", new UpdateCommand());
     }
 
 }

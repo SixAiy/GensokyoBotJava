@@ -29,11 +29,11 @@ import gensokyobot.audio.GuildPlayer;
 import gensokyobot.audio.PlayerRegistry;
 import gensokyobot.commandmeta.abs.Command;
 import gensokyobot.commandmeta.abs.ICommandOwnerRestricted;
-import net.dv8tion.jda.core.JDA;
-import net.dv8tion.jda.core.entities.Guild;
-import net.dv8tion.jda.core.entities.Member;
-import net.dv8tion.jda.core.entities.Message;
-import net.dv8tion.jda.core.entities.TextChannel;
+import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.Member;
+import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.entities.TextChannel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -65,6 +65,7 @@ public class EvalCommand extends Command implements ICommandOwnerRestricted {
 
     @Override
     public void onInvoke(Guild guild, TextChannel channel, Member author, Message message, String[] args) {
+
         JDA jda = guild.getJDA();
 
         channel.sendTyping().queue();

@@ -28,12 +28,12 @@ package gensokyobot.command.maintenance;
 import gensokyobot.GensokyoBot;
 import gensokyobot.commandmeta.abs.Command;
 import gensokyobot.commandmeta.abs.IMaintenanceCommand;
-import net.dv8tion.jda.core.JDA;
-import net.dv8tion.jda.core.MessageBuilder;
-import net.dv8tion.jda.core.entities.Guild;
-import net.dv8tion.jda.core.entities.Member;
-import net.dv8tion.jda.core.entities.Message;
-import net.dv8tion.jda.core.entities.TextChannel;
+import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.MessageBuilder;
+import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.Member;
+import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.entities.TextChannel;
 
 import java.util.ArrayList;
 import java.util.List;

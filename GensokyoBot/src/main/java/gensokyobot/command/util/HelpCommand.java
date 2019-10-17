@@ -28,9 +28,9 @@ package gensokyobot.command.util;
 import gensokyobot.Config;
 import gensokyobot.commandmeta.abs.Command;
 import gensokyobot.util.BotConstants;
-import net.dv8tion.jda.core.EmbedBuilder;
-import net.dv8tion.jda.core.JDA;
-import net.dv8tion.jda.core.entities.*;
+import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.entities.*;
 
 import java.awt.*;
 

@@ -30,11 +30,11 @@ import gensokyobot.agent.GensokyoInfoAgent;
 import gensokyobot.commandmeta.abs.Command;
 import gensokyobot.commandmeta.abs.IMusicCommand;
 import gensokyobot.feature.I18n;
-import net.dv8tion.jda.core.EmbedBuilder;
-import net.dv8tion.jda.core.entities.Guild;
-import net.dv8tion.jda.core.entities.Member;
-import net.dv8tion.jda.core.entities.Message;
-import net.dv8tion.jda.core.entities.TextChannel;
+import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.Member;
+import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.entities.TextChannel;
 import org.json.JSONObject;
 import org.json.XML;
 

@@ -36,17 +36,19 @@ import com.sedmelluq.discord.lavaplayer.source.http.HttpAudioSourceManager;
 import com.sedmelluq.discord.lavaplayer.source.twitch.TwitchStreamAudioSourceManager;
 import com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager;
 import com.sedmelluq.discord.lavaplayer.track.playback.AudioFrame;
-import net.dv8tion.jda.core.JDA;
-import net.dv8tion.jda.core.Permission;
-import net.dv8tion.jda.core.audio.AudioSendHandler;
-import net.dv8tion.jda.core.entities.Guild;
-import net.dv8tion.jda.core.entities.Member;
-import net.dv8tion.jda.core.entities.TextChannel;
-import net.dv8tion.jda.core.entities.VoiceChannel;
-import net.dv8tion.jda.core.managers.AudioManager;
-import net.dv8tion.jda.core.utils.PermissionUtil;
+import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.Permission;
+import net.dv8tion.jda.api.audio.AudioSendHandler;
+import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.Member;
+import net.dv8tion.jda.api.entities.TextChannel;
+import net.dv8tion.jda.api.entities.VoiceChannel;
+import net.dv8tion.jda.api.managers.AudioManager;
+import net.dv8tion.jda.internal.utils.PermissionUtil;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.Nullable;
+import java.nio.ByteBuffer;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -196,10 +198,12 @@ public class GuildPlayer extends AudioEventAdapter implements AudioSendHandler {
         return lastFrame != null;
     }
 
+    @Nullable
     @Override
-    public byte[] provide20MsAudio() {
-        return lastFrame.data;
+    public ByteBuffer provide20MsAudio() {
+        return null;
     }
+
 
     @Override
     public boolean isOpus() {

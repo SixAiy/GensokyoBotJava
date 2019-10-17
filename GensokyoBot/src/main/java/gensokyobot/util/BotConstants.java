@@ -35,9 +35,9 @@ public class BotConstants {
 
     public static final long FREDBOAT_HANGOUT_ID = 174820236481134592L;
     public static final long FBH_MODERATOR_ROLE_ID = 242377373947920384L;
-    public static final Color FREDBOAT_COLOR = new Color(28, 191, 226); //#1CBFE2
+    public static final Color GENSOKYOBOT_COLOR = new Color(28, 191, 226); //#1CBFE2
 
-    public static final String FREDBOAT_URL = "https://fredboat.com";
+    public static final String GENSOKYOBOT_URL = "https://fredboat.com";
     public static final String DOCS_URL = "https://docs.sixaiy.com/gensokyobot";
     public static final String DOCS_PERMISSIONS_URL = DOCS_URL + "/permissions";
     public static final String PATREON_CAMPAIGN_URL = "https://www.patreon.com/fredboat";
@@ -45,5 +45,4 @@ public class BotConstants {
 
     //These can be set using eval in case we need to change it in the future ~Fre_d
     public static String hangoutInvite = "https://discord.gg/cgPFW4q";
-    public static String botInvite = "https://goo.gl/cFs5M9";
 }

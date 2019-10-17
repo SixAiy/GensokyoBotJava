@@ -30,7 +30,7 @@ import gensokyobot.audio.PlayerRegistry;
 import gensokyobot.commandmeta.abs.Command;
 import gensokyobot.feature.I18n;
 import gensokyobot.commandmeta.abs.IMusicCommand;
-import net.dv8tion.jda.core.entities.*;
+import net.dv8tion.jda.api.entities.*;
 
 import java.text.MessageFormat;
 

@@ -33,6 +33,5 @@
 
     <modules>
         <module>GensokyoBot</module>
-        <module>GensokyoBot-Bootloader</module>
     </modules>
 </project>

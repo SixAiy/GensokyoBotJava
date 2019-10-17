@@ -28,10 +28,10 @@ package gensokyobot.command.music.info;
 import gensokyobot.commandmeta.abs.Command;
 import gensokyobot.commandmeta.abs.IMusicCommand;
 import gensokyobot.feature.I18n;
-import net.dv8tion.jda.core.entities.Guild;
-import net.dv8tion.jda.core.entities.Member;
-import net.dv8tion.jda.core.entities.Message;
-import net.dv8tion.jda.core.entities.TextChannel;
+import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.Member;
+import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.entities.TextChannel;
 
 public class GensokyoRadioCommand extends Command implements IMusicCommand {
 

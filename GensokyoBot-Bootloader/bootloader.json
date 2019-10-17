@@ -1,8 +1,0 @@
-{
-    "command": [
-        "java",
-        "-jar",
-        "GensokyoBot.jar"
-    ],
-    "jarName": "GensokyoBot.jar"
-}

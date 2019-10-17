@@ -33,10 +33,10 @@ import gensokyobot.event.EventLogger;
 import gensokyobot.feature.I18n;
 import com.mashape.unirest.http.Unirest;
 import com.sedmelluq.discord.lavaplayer.jdaudp.NativeAudioSendFactory;
-import net.dv8tion.jda.bot.sharding.DefaultShardManagerBuilder;
-import net.dv8tion.jda.bot.sharding.ShardManager;
-import net.dv8tion.jda.core.JDAInfo;
-import net.dv8tion.jda.core.events.ReadyEvent;
+import net.dv8tion.jda.api.JDAInfo;
+import net.dv8tion.jda.api.events.ReadyEvent;
+import net.dv8tion.jda.api.sharding.DefaultShardManagerBuilder;
+import net.dv8tion.jda.api.sharding.ShardManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

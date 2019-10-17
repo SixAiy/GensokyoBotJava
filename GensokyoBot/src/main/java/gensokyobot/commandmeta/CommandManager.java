@@ -32,10 +32,10 @@ import gensokyobot.commandmeta.abs.ICommandOwnerRestricted;
 import gensokyobot.feature.I18n;
 import gensokyobot.util.DiscordUtil;
 import gensokyobot.util.TextUtils;
-import net.dv8tion.jda.core.entities.Guild;
-import net.dv8tion.jda.core.entities.Member;
-import net.dv8tion.jda.core.entities.Message;
-import net.dv8tion.jda.core.entities.TextChannel;
+import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.Member;
+import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.entities.TextChannel;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;

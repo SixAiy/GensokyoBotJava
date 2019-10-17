@@ -25,7 +25,7 @@
 
 package gensokyobot.event;
 
-import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
+import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
 public abstract class UserListener {
     
