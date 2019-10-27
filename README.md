@@ -18,31 +18,7 @@ Credits to [Frederikham](https://github.com/Frederikam) for the creation of Gens
 [![Join FredBoat Hangout](https://discordapp.com/api/guilds/174820236481134592/embed.png?style=banner2)](https://discord.gg/cgPFW4q)
 
 # Commands
-```md
-< Music Commands >
-,,join
-#Joins your voice chat and begin playing.
-,,leave
-#Leaves the voice chat, stopping the music
-,,np
-#Shows the song currently playing in a nice embed
-,,stats
-#Displays stats about this bot
-,,shards
-#Displays the version of JDA on this bot
-,,invite
-#Displays invite link for this bot
-,,help
-#Displays this help message
-
-
-Invite this bot: https://discordapp.com/oauth2/authorize?&client_id=302857939910131712&scope=bot
-Source code: https://github.com/Frederikam/GensokyoBot
-
-Content provided by gensokyoradio.net.
-The GR logo is a trademark of Gensokyo Radio.
-Gensokyo Radio is © LunarSpotlight.
-```
+![Help](https://raw.githubusercontent.com/SixAiy/GensokyoBot/master/helpcommand.png)
 
 # Selfhosting
 1. Java 13 __JDK__: [Oracle](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or [OpenJDK](http://jdk.java.net/13/)
