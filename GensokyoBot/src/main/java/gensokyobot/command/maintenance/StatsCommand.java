@@ -27,6 +27,7 @@ package gensokyobot.command.maintenance;
 
 import gensokyobot.Config;
 import gensokyobot.GensokyoBot;
+import gensokyobot.audio.GuildPlayer;
 import gensokyobot.audio.PlayerRegistry;
 import gensokyobot.commandmeta.CommandManager;
 import gensokyobot.commandmeta.abs.Command;
@@ -34,10 +35,7 @@ import gensokyobot.commandmeta.abs.IMaintenanceCommand;
 import gensokyobot.feature.I18n;
 import gensokyobot.util.TextUtils;
 import net.dv8tion.jda.api.JDAInfo;
-import net.dv8tion.jda.api.entities.Guild;
-import net.dv8tion.jda.api.entities.Member;
-import net.dv8tion.jda.api.entities.Message;
-import net.dv8tion.jda.api.entities.TextChannel;
+import net.dv8tion.jda.api.entities.*;
 
 import java.text.MessageFormat;
 
@@ -69,7 +67,7 @@ public class StatsCommand extends Command implements IMaintenanceCommand {
 
         str = str + "Sharding:                       " + guild.getJDA().getShardInfo().getShardString() + "\n";
         str = str + "Players playing:                " + PlayerRegistry.getPlayingPlayers().size() + "\n";
-        str = str + "Listeners:                      " + PlayerRegistry.getPlayingPlayers().size() + "\n";
+        str = str + "Listeners:                      " + GuildPlayer.getHumanUsersInVC().size() + "\n";
 
         str = str + "Known servers:                  " + GensokyoBot.getShardManager().getGuilds().size() + "\n";
         str = str + "Known users in servers:         " + GensokyoBot.getShardManager().getUsers().size() + "\n";

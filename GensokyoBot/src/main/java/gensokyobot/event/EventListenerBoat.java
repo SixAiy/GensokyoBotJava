@@ -25,16 +25,19 @@
 package gensokyobot.event;
 
 import gensokyobot.Config;
+import gensokyobot.GensokyoBot;
 import gensokyobot.audio.PlayerRegistry;
 import gensokyobot.command.util.HelpCommand;
 import gensokyobot.commandmeta.CommandManager;
 import gensokyobot.commandmeta.CommandRegistry;
 import gensokyobot.commandmeta.abs.Command;
+import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.*;
+import net.dv8tion.jda.api.events.guild.GuildJoinEvent;
 import net.dv8tion.jda.api.events.guild.GuildLeaveEvent;
 import net.dv8tion.jda.api.events.message.MessageDeleteEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.api.events.message.priv.PrivateMessageReceivedEvent;
+import org.discordbots.api.client.DiscordBotListAPI;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -51,9 +54,22 @@ public class EventListenerBoat extends AbstractEventListener {
     public EventListenerBoat() { }
 
     public void onMessageReceived(MessageReceivedEvent event) {
-        if (event.getPrivateChannel() != null) {
-            log.info("PRIVATE" + " \t " + event.getAuthor().getName() + " \t " + event.getMessage().getContentRaw());
-            return;
+
+        if(event.isFromType(ChannelType.PRIVATE)) {
+            PrivateChannel privateChannel = event.getPrivateChannel();
+            if (event.getAuthor() == lastUserToReceiveHelp) {
+                //Ignore, they just got help! Stops any bot chain reactions
+                return;
+            }
+
+            if (event.getAuthor().equals(event.getJDA().getSelfUser())) {
+                //Don't reply to ourselves
+                return;
+            }
+
+            event.getChannel().sendMessage(HelpCommand.getHelpMessage(event.getJDA())).queue();
+            lastUserToReceiveHelp = event.getAuthor();
+
         }
 
         if (event.getAuthor().equals(event.getJDA().getSelfUser())) {
@@ -99,24 +115,55 @@ public class EventListenerBoat extends AbstractEventListener {
     }
 
     @Override
-    public void onPrivateMessageReceived(PrivateMessageReceivedEvent event) {
-        if (event.getAuthor() == lastUserToReceiveHelp) {
-            //Ignore, they just got help! Stops any bot chain reactions
-            return;
-        }
-
-        if (event.getAuthor().equals(event.getJDA().getSelfUser())) {
-            //Don't reply to ourselves
-            return;
-        }
-
-        event.getChannel().sendMessage(HelpCommand.getHelpMessage(event.getJDA())).queue();
-        lastUserToReceiveHelp = event.getAuthor();
-    }
-
-    @Override
     public void onGuildLeave(GuildLeaveEvent event) {
         PlayerRegistry.destroyPlayer(event.getGuild());
+
+        EmbedBuilder eb = new EmbedBuilder();
+        eb.setAuthor("Left Guild", null, null);
+        eb.setThumbnail(event.getGuild().getIconUrl());
+        eb.addField("Name", event.getGuild().getName() + "\n" + event.getGuild().getId(),  true);
+        eb.addField("Total Guilds", String.valueOf(GensokyoBot.getShardManager().getGuilds()), true);
+
+
+        TextChannel textChannel = event.getGuild().getTextChannelById("632005201682759712");
+        textChannel.sendMessage(eb.build()).queue();
+
+        DiscordBotListAPI api = new DiscordBotListAPI.Builder()
+                .token(Config.CONFIG.getTopGGToken())
+                .botId(event.getJDA().getSelfUser().getId())
+                .build();
+
+        int shardId = event.getJDA().getShardInfo().getShardId();
+        int shardCount = event.getJDA().getShardInfo().getShardTotal();
+        int serverCount = GensokyoBot.getShardManager().getGuilds().size();
+
+        api.setStats(shardId, shardCount, serverCount);
+
+    }
+
+    public void onGuildJoin(GuildJoinEvent event) {
+
+        EmbedBuilder eb = new EmbedBuilder();
+        eb.setAuthor("Left Guild", null, null);
+        eb.setThumbnail(event.getGuild().getIconUrl());
+        eb.addField("Name", event.getGuild().getName() + "\n" + event.getGuild().getId(),  true);
+        eb.addField("Total Guilds", String.valueOf(GensokyoBot.getShardManager().getGuilds()), true);
+
+
+        TextChannel textChannel = event.getGuild().getTextChannelById("632005201682759712");
+        textChannel.sendMessage(eb.build()).queue();
+
+        DiscordBotListAPI api = new DiscordBotListAPI.Builder()
+                .token(Config.CONFIG.getTopGGToken())
+                .botId(event.getJDA().getSelfUser().getId())
+                .build();
+
+        int shardId = event.getJDA().getShardInfo().getShardId();
+        int shardCount = event.getJDA().getShardInfo().getShardTotal();
+        int serverCount = GensokyoBot.getShardManager().getGuilds().size();
+
+        api.setStats(shardId, shardCount, serverCount);
+
     }
 
 }

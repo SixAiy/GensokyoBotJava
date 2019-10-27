@@ -8,6 +8,8 @@ import java.util.concurrent.ConcurrentLinkedDeque;
 
 public class Subscriber {
 
+    String[] listenersArray = {};
+
     private static final Logger log = LoggerFactory.getLogger(Subscriber.class);
 
     private final StreamCombiner streamCombiner;
@@ -16,7 +18,9 @@ public class Subscriber {
 
     Subscriber(StreamCombiner streamCombiner) {
         this.streamCombiner = streamCombiner;
+
         log.info("Sub!");
+
     }
 
     void feed(AudioFrame frame) {

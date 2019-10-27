@@ -39,7 +39,7 @@ public class JoinCommand extends Command implements IMusicCommand {
     @Override
     public void onInvoke(Guild guild, TextChannel channel, Member invoker, Message message, String[] args) {
         GuildPlayer player = PlayerRegistry.get(guild);
-        VoiceChannel vc = player.getUserCurrentVoiceChannel(invoker);
+        VoiceChannel vc = GuildPlayer.getUserCurrentVoiceChannel(invoker);
         player.setCurrentTC(channel);
         try {
             player.joinChannel(vc);
@@ -49,8 +49,7 @@ public class JoinCommand extends Command implements IMusicCommand {
             }
         } catch (IllegalStateException ex) {
             if(vc != null) {
-                channel.sendMessage(MessageFormat.format(I18n.get().getString("joinErrorAlreadyJoining"), vc.getName()))
-                        .queue();
+                channel.sendMessage(MessageFormat.format(I18n.get().getString("joinErrorAlreadyJoining"), vc.getName())).queue();
             } else {
                 throw ex;
             }

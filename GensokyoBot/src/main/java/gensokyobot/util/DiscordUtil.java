@@ -25,28 +25,15 @@
 
 package gensokyobot.util;
 
-import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.concurrent.atomic.AtomicReference;
 
 public class DiscordUtil {
 
     private static final Logger log = LoggerFactory.getLogger(DiscordUtil.class);
 
     public static boolean isUserBotOwner(User user) {
-        return getOwnerId(user.getJDA()).equals(user.getId());
-    }
-
-    private static Long getOwnerId(JDA jda) {
-        try {
-            AtomicReference<Long> ownerId = new AtomicReference<>();
-            ownerId.set(BotConstants.OWNER_SIXAIY);
-            return ownerId.get();
-        } catch (NullPointerException e) {
-            throw new RuntimeException(e);
-        }
+        return user.getIdLong() == BotConstants.OWNER_SIXAIY || user.getIdLong() == BotConstants.OWNER_FRED;
     }
 }

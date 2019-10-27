@@ -56,9 +56,8 @@ import java.util.List;
 public class GuildPlayer extends AudioEventAdapter implements AudioSendHandler {
 
     private static final org.slf4j.Logger log = LoggerFactory.getLogger(GuildPlayer.class);
-
-    public final JDA jda;
-    private final String guildId;
+    private static JDA jda;
+    private static String guildId;
     private TextChannel currentTC;
     public static AudioPlayerManager audioPlayerManager = initAudioPlayerManager();
     private static StreamCombiner streamCombiner = initGensokyoStreamCombiner();
@@ -117,11 +116,12 @@ public class GuildPlayer extends AudioEventAdapter implements AudioSendHandler {
     /**
      * May return null if the member is currently not in a channel
      */
-    public VoiceChannel getUserCurrentVoiceChannel(Member member) {
+    public static VoiceChannel getUserCurrentVoiceChannel(Member member) {
+
         return member.getVoiceState().getChannel();
     }
 
-    public VoiceChannel getChannel() {
+    public static VoiceChannel getChannel() {
         return getUserCurrentVoiceChannel(getGuild().getSelfMember());
     }
 
@@ -132,13 +132,9 @@ public class GuildPlayer extends AudioEventAdapter implements AudioSendHandler {
             log.warn("No currentTC in " + getGuild() + "! Returning public channel...");
             return getGuild().getDefaultChannel();
         }
-
     }
 
-    /**
-     * @return Users who are not bots
-     */
-    public List<Member> getHumanUsersInVC() {
+    public static List<Member> getHumanUsersInVC() {
         VoiceChannel vc = getChannel();
         if (vc == null) {
             return new ArrayList<>();
@@ -159,16 +155,12 @@ public class GuildPlayer extends AudioEventAdapter implements AudioSendHandler {
         return "[GP:" + getGuild().getId() + "]";
     }
 
-    public Guild getGuild() {
+    public static Guild getGuild() {
         return jda.getGuildById(guildId);
     }
 
     public void setCurrentTC(TextChannel currentTC) {
         this.currentTC = currentTC;
-    }
-
-    public TextChannel getCurrentTC() {
-        return currentTC;
     }
 
     @Override

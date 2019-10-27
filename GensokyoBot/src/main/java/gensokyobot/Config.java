@@ -39,6 +39,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Map;
 
+
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
 public class Config {
@@ -49,6 +50,7 @@ public class Config {
 
     private static String DEFAULT_PREFIX = "--";
     public static String GENSOKYO_RADIO_STREAM_URL = "https://gensokyoradio.net/GensokyoRadio.m3u";
+
 
     private final DistributionEnum distribution;
     private String prefix;
@@ -90,6 +92,8 @@ public class Config {
     static void loadDefaultConfig(int scope) throws IOException {
         Config.CONFIG = new Config(loadConfigFile("config"));
     }
+
+
 
     /**
      * Makes sure the requested config file exists in the current format. Will attempt to migrate old formats to new ones

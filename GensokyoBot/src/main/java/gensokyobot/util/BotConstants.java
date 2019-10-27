@@ -31,15 +31,17 @@ public class BotConstants {
     public static final long OWNER_FRED = 81011298891993088L;
     public static final long OWNER_SIXAIY = 188571987835092992L;
 
+    public static final String FBH_ADMIN_ROLE_ID = "174824663258497024";
+    public static final long FBH_MODERATOR_ROLE_ID = 242377373947920384L;
+
     public static final long GENSOKYO_BOT_ID = 302857939910131712L;
 
     public static final long FREDBOAT_HANGOUT_ID = 174820236481134592L;
-    public static final long FBH_MODERATOR_ROLE_ID = 242377373947920384L;
     public static final Color GENSOKYOBOT_COLOR = new Color(28, 191, 226); //#1CBFE2
 
     public static final String GENSOKYOBOT_URL = "https://fredboat.com";
-    public static final String DOCS_URL = "https://docs.sixaiy.com/gensokyobot";
-    public static final String DOCS_PERMISSIONS_URL = DOCS_URL + "/permissions";
+    public static final String DOCS_URL = "https://docs.sixaiy.comt";
+    public static final String DOCS_PERMISSIONS_URL = DOCS_URL + "/gensokyobot-perm";
     public static final String PATREON_CAMPAIGN_URL = "https://www.patreon.com/fredboat";
     public static final String GITHUB_URL = "https://github.com/SixAiy/GensokyoBot";
 

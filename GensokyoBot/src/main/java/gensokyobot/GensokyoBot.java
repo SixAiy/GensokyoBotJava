@@ -132,6 +132,8 @@ public class GensokyoBot {
         if (ready == Config.CONFIG.getNumShards()) {
             log.info("All " + ready + " shards are ready.");
         }
+
+
     }
 
     //Shutdown hook
