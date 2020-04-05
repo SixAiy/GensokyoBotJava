@@ -9,6 +9,6 @@ GensokyoBot is licensed under the MIT license, so feel free to copy small or lar
 Credits to [Frederikham](https://github.com/Frederikam) for the creation of GensokyoBot
 
 ### Commands
-![Help](https://raw.githubusercontent.com/SixAiy/GensokyoBot/master/helpcommand.png)
+![Help](https://raw.githubusercontent.com/SixAiy/GensokyoBotJava/master/helpcommand.png)
 
 
