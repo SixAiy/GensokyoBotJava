@@ -1,7 +1,7 @@
 # GensokyoBot
 
 ## Deprecation notice
-As of Whitelisting Intents introduction on Discord, GensokyoBot's Public Github Repository is no longer being maintained. 
+As of Whitelisting Intents introduction on Discord and the API Domain changes, GensokyoBot's Public Github Repository is no longer being maintained. 
 
 If you would like to help maintain the Public Github of GensokyoBot, We welcome you to provide feedback by reading our Contributing Section of this readme.
 
