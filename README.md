@@ -1,15 +1,18 @@
 # GensokyoBot
-Special Thanks to  [Gensokyo Radio Team](https://gensokyoradio.net) for the partnership and permission to allow GensokyoBot to play the latest in Toho Music from around the world!
 
+## Deprecation notice
+As of Whitelisting Intents introduction on Discord, GensokyoBot's Public Github Repository is no longer being maintained. 
+If you would like to help maintain the Public Github of GensokyoBot, We welcome you to provide feedback by reading our Contributing Section of this readme.
+
+## Pull requests
 Pull requests are welcome and please report any issues you find in [issues](https://github.com/SixAiy/GensokyoBot/issues).
 
+## Contributing
+If you are interested, you can read about contributing to this project [here](CONTRIBUTING.md).
+
+## Licensing
 GensokyoBot is licensed under the MIT license, so feel free to copy small or large parts of the code here without having to ask.
 
-[![Join Sentcord Lounge](https://discordapp.com/api/guilds/714375666539298887/embed.png?style=banner2)](https://gensokyobot.com/discord)
-
-Credits to [Frederikham](https://github.com/Frederikam) for the creation of GensokyoBot
-
-### Commands
-![Help](https://raw.githubusercontent.com/SixAiy/GensokyoBotJava/master/helpcommand.png)
-
-
+## Special Thanks
+[Frederikham](https://github.com/Frederikam) for the creation of GensokyoBot
+[x-Samantha](https://github.com/x-Samantha) Updates on the Shard Manager (Sep 13, 2018)
